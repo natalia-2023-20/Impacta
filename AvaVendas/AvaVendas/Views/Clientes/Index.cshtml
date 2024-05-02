@@ -1,0 +1,62 @@
+﻿@model IEnumerable<AvaVendas.Models.Cliente>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Criar novo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NivelID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CPF)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefone)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NivelID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CPF)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefone)
+            </td>
+            <td>
+                <div class="text-center">
+                        <a asp-action="Edit" class="btn btn-secondary btn-sm" asp-route-id="@item.ClienteId"><i class="bi bi-pencil"></i>Editar</a>
+                </div>
+
+                <div class="text-center">
+                        <a asp-action="Details" class="btn btn-success btn-sm" asp-route-id="@item.ClienteId"><i class="bi bi-search"></i>Detalhes</a>
+                </div>
+
+                <div class="text-center">
+                        <a asp-action="Delete" class="btn btn-danger btn-sm" asp-route-id="@item.ClienteId"><i class="bi bi-trash"></i>Deletar</a>
+                </div>
+
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

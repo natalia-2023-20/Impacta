@@ -1,0 +1,24 @@
+﻿@model AvaVendas.Models.NivelAcesso
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalhes</h1>
+
+<div>
+    <h4>NivelAcesso</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Acesso)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Acesso)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.NivelID">Edit</a> |
+    <a asp-action="Index">Voltar</a>
+</div>
